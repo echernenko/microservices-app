@@ -1,4 +1,4 @@
-# microservices-app
+# microservices-app-frontend
 Playground
 
 How to build?

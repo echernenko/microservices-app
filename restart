@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t microservices-app .;
+docker stop `docker ps -q`;
+docker run -d -p 80:80 microservices-app;

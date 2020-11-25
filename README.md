@@ -3,8 +3,8 @@ Playground
 
 How to build?
 ```
-cd /Users/echernenko/projects/microservices-app
-docker build -t microservices-app .
+cd /Users/echernenko/projects/microservices-app-frontend
+docker build -t microservices-app-frontend .
 docker images
-docker run -d -p 80:80 microservices-app
+docker run -d -p 80:80 microservices-app-frontend
 ```

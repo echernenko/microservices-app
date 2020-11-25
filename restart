@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker build -t microservices-app-frontend .;
-docker stop `docker ps -q`;
-docker run -d -p 80:80 microservices-app-frontend;
+docker stop `docker ps | grep ':80' | awk '{ print $1 }'`;
+docker run -d -p 127.0.0.1:80:80 --restart unless-stopped microservices-app-frontend;

@@ -3,9 +3,14 @@ import json, urllib.request
 
 async def handle(request):
 
-  #data = urllib.request.urlopen("http://host.docker.internal:5858").read()
-  data = urllib.request.urlopen("http://localhost:5858").read()
-  backendServiceData = json.loads(data)
+  # default value
+  backendServiceData = {"name": "failed to call backend service :("}
+  try:
+    data = urllib.request.urlopen("http://host.docker.internal:5858").read()
+    # data = urllib.request.urlopen("http://localhost:5858").read()
+    backendServiceData = json.loads(data)
+  except:
+    print("failed to call backend service :(");
 
   be_service_payload_decorated = '';
   for key in backendServiceData:
